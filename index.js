@@ -5,11 +5,9 @@ app.use(cors());
 let bodyParser = require("body-parser");
 app.use(bodyParser.raw({ type: "*/*" }));
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
-// https://expressjs.com/en/starter/basic-routing.html
+
 /*app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
 });*/
