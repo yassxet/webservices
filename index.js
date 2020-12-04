@@ -20,16 +20,12 @@ app.get("/sourcecode", (req, res) => {
     );
 });
 
-let tokenGenerator = length => {
-    let characters =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let token = "";
-    for (let i = 0; i < length; i++) {
-        token += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return token;
-};
-
+let tokenGenerator = () => {
+    let token=""
+      token = "token"+Math.floor(Math.random() * 1000000000);
+      return token;
+    };
+    
 let users = new Map(); //Username & password
 let tokens = new Map(); //Username & generatedToken
 let token_username = new Map(); //generatedToken & username
